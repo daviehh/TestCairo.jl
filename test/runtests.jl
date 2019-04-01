@@ -35,4 +35,14 @@ Homebrew.add("pixman")
     @show h = Libdl.dlopen(l,Libdl.RTLD_LAZY)
     @test h != C_NULL
     Libdl.dlclose(h)
+    return true
+end
+
+@testset "find_library" begin
+    @show l = joinpath(Homebrew.prefix(),"lib","libpango-1.0.dylib" )
+    @show find_library (l)
+    
+    @show l2 = joinpath(Homebrew.prefix(),"lib","libgobject-2.0.dylib" )
+    @show find_library (l)
+    return true
 end
