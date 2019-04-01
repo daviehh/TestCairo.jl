@@ -40,9 +40,9 @@ end
 
 @testset "find_library" begin
     @show l = joinpath(Homebrew.prefix(),"lib","libpango-1.0.dylib" )
-    @show find_library (l)
+    @show find_library(l)
     
     @show l2 = joinpath(Homebrew.prefix(),"lib","libgobject-2.0.dylib" )
-    @show find_library (l)
+    @show find_library(l2)
     return true
 end
